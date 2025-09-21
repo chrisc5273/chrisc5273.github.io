@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Crocodile Bar — Home</title>
+  <style>
+    :root{
+      --bg: #0e0f12;
+      --card: #171a1f;
+      --text: #f4f6f8;
+      --muted: #cdd3da;
+      --accent: #20c997;     /* crocodile green accent */
+      --accent-2: #ff3b30;   /* heat/pop */
+      --radius: 14px;
+      --shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+
+    /* Base reset */
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body{
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color: var(--text);
+      background: radial-gradient(1200px 800px at 20% -20%, rgba(32,201,151,.12), transparent 60%),
+                  radial-gradient(900px 600px at 120% 20%, rgba(255,59,48,.12), transparent 60%),
+                  var(--bg);
+      display: flex;
+      flex-direction: column;
+      min-height: 100dvh; /* keeps footer at bottom */
+    }
+
+    /* Header */
+    header, footer{
+      background: linear-gradient(80deg, rgba(255,93,93,.6), rgba(255,64,48,.85));
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(6px);
+    }
+    .nav{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      justify-content: space-between;
+    }
+    .brand{
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
+    .brand h1{
+      margin: 0;
+      font-size: 1.6rem;
+      letter-spacing: .5px;
+    }
+    .tag{
+      font-size: .9rem;
+      color: #0b0c0f;
+      background: #fff;
+      padding: 2px 10px;
+      border-radius: 999px;
+      font-weight: 600;
+      mix-blend-mode: screen;
+    }
+    nav a{
+      color: var(--text);
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 10px;
+      opacity: .9;
+    }
+    nav a:hover{ background: rgba(255,255,255,.08); opacity: 1; }
+    nav a.active{ background: rgba(255,255,255,.14); }
+
+    /* Layout */
+    main{
+      flex: 1;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 28px 20px 60px;
+    }
+
+    .hero{
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+    .card{
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .card.pad{ padding: 22px; }
+
+    .hero h2{
+      margin: 0 0 10px;
+      font-size: clamp(1.6rem, 2.6vw + .5rem, 2.4rem);
+    }
+    .lead{
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    .stats{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 16px;
+    }
+    .stat{
+      background: #0f1116;
+      border: 1px solid rgba(255,255,255,.06);
+      border-radius: 12px;
+      padding: 14px;
+      text-align: center;
+    }
+    .stat b{ font-size: 1.2rem; display: block; }
+    .badge{
+      display: inline-block;
+      margin-top: 8px;
+      padding: 2px 10px;
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 999px;
+      font-size: .85rem;
+      color: var(--muted);
+    }
+
+    .promo{
+      background:
+        radial-gradient(400px 220px at 80% 120%, rgba(32,201,151,.25), transparent 60%),
+        linear-gradient(180deg, #151821, #111319);
+      display: grid;
+      place-content: center;
+      text-align: center;
+      padding: 24px;
+    }
+    .promo h3{ margin: 4px 0 10px; font-size: 1.4rem; }
+    .promo p{ margin: 0 0 14px; color: var(--muted); }
+    .cta{
+      display: inline-block;
+      text-decoration: none;
+      color: #07120f;
+      background: var(--accent);
+      padding: 10px 16px;
+      border-radius: 12px;
+      font-weight: 700;
+    }
+    .cta:hover{ filter: brightness(1.05); }
+
+    /* Content blocks */
+    .section{
+      margin-top: 26px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+    .section h3{ margin: 0 0 10px; }
+    .section p{ color: var(--muted); line-height: 1.65; }
+
+    /* Footer */
+
+    .foot-wrap{
+      max-width: 1100px; margin: 0 auto; padding: 18px 20px;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      color: var(--muted);
+    }
+    .slogan{ font-style: italic; color: #fff; }
+    .tiny{ font-size: .9rem; }
+
+    /* Responsive */
+    @media (max-width: 860px){
+      .hero{ grid-template-columns: 1fr; }
+      .section{ grid-template-columns: 1fr; }
+      nav{ display: flex; gap: 6px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <h1>Crocodile Bar</h1>
+        <span class="tag">Bite Into the Night</span>
+      </div>
+      <nav>
+        <a class="active" href="index.html">Home</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <article class="card pad">
+        <h2>Our Vision</h2>
+        <p class="lead">
+          Crocodile Bar is a bold, vibrant spot where energy and atmosphere come together to create the ultimate nightlife experience. With a name that symbolizes strength, edge, and adventure, Crocodile Bar is more than just a place to grab a drink — it’s a destination.
+        </p>
+        <div class="stats">
+          <div class="stat">
+            <b>Craft Cocktails</b>
+            <span class="badge">Signature “with a bite”</span>
+          </div>
+          <div class="stat">
+            <b>Local Brews</b>
+            <span class="badge">Rotating taps</span>
+          </div>
+          <div class="stat">
+            <b>Live Vibes</b>
+            <span class="badge">DJs & Acoustics</span>
+          </div>
+        </div>
+      </article>
+
+      <aside class="card promo">
+        <h3>Happy Hour, Daily</h3>
+        <p>4:00–6:00 PM • Bites + Sips • Good company</p>
+        <a class="cta" href="about.html">See the Story</a>
+      </aside>
+    </section>
+
+    <section class="section">
+      <div class="card pad">
+        <h3>Atmosphere</h3>
+        <p>
+          Step into a space that’s modern yet untamed—moody lighting, lush textures, and a soundscape that keeps the night alive. Designed for after-work unwinds, late-night celebrations, and everything in between.
+        </p>
+      </div>
+      <div class="card pad">
+        <h3>Drinks With Bite</h3>
+        <p>
+          From bold originals to refined classics, our menu is built to surprise and delight. Ask for our signature “Snap” cocktails and seasonal features.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="foot-wrap">
+      <span class="slogan">“Bite Into the Night.”</span>
+      <span class="tiny">© <span id="y"></span> Crocodile Bar</span>
+    </div>
+    <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  </footer>
+</body>
+</html>
