@@ -1,3 +1,7 @@
+a:link    { color: #0f172a; text-decoration: none; }     /* not blue */
+a:visited { color: #334155; }                             /* not purple */
+a:hover   { color: #0369a1; text-decoration: underline; } /* clear hover */
+a:active  { color: #b91c1c; }                             /* not bright red */
 
         body {
             background-color: cadetblue;
