@@ -1,34 +1,97 @@
-a:link    { color: #0f172a; text-decoration: none; }     /* not blue */
-a:visited { color: #334155; }                             /* not purple */
-a:hover   { color: #0369a1; text-decoration: underline; } /* clear hover */
-a:active  { color: #b91c1c; }                             /* not bright red */
+/*
+|--------------------------------------------------------------------------
+| BASE STYLES & LINK DEFINITIONS (Applied globally)
+|--------------------------------------------------------------------------
+*/
 
-        body {
-            background-color: cadetblue;
-            margin: 0;
-            text-align: center;
-            color: white;
-            max-width: 800;
+/* Default styles for all anchor links */
+a {
+    text-decoration: none;
+    padding: 25px;
+    color: rgb(253, 253, 28); /* Yellow color */
+}
 
-        }
+/* Link State Colors (LVHA Order: Link, Visited, Hover, Active) */
+a:link {
+    color: #0f172a; /* Dark gray/blue - "not blue" */
+    text-decoration: none;
+}
 
-        header {
-            background-color: rgb(35, 30, 30);
-            padding: 5px;
-        }
+a:visited {
+    color: #334155; /* Medium gray/blue - "not purple" */
+}
 
-        a {
-            text-decoration: none;
-            padding: 25px;
-            color: rgb(253, 253, 28);
-        }
-        h1{
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        }
-        p{
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        }
-        main {
-            text-align: center;
-   
-        }
+a:hover {
+    color: #0369a1; /* Clear hover blue */
+    text-decoration: underline;
+}
+
+a:active {
+    color: #b91c1c; /* Darker red - "not bright red" */
+}
+
+/* Base Body and Typography Styles */
+body {
+    background-color: #fdfdfd; /* Background from sample */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: white; /* Default text color from original code */
+}
+
+header {
+    background-color: #000;
+    color: #fff;
+    padding: 5px;
+}
+
+h1, p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/*
+|--------------------------------------------------------------------------
+| FOUNDATIONAL THREE - RESPONSIVE LAYOUT (Applied globally/default)
+|--------------------------------------------------------------------------
+| These styles center the main content and define its boundaries.
+*/
+
+main, .maincontainer {
+    background: #fff;
+    text-align: center;
+    
+    /* ASSIGNMENT REQUIREMENTS: */
+    width: 95%;          /* Percentage Width */
+    max-width: 1200px;   /* Max-Width to prevent stretching */
+    margin: 0 auto;      /* Margins to 0 auto to center content */
+}
+
+/* Example colorbox element used for media query demonstration */
+#colorbox {
+    height: 200px;
+    width: 200px;
+    background: blue; /* Default/Mobile background color */
+    margin: 50px auto;
+}
+
+
+
+/* RULE OVERRIDES FOR TABLET DEVICES (601px to 980px) */
+@media screen and (min-width: 601px) and (max-width: 980px) {
+    #colorbox {
+        background-color: orange;
+    }
+}
+
+@media screen and (min-width: 981px) and (max-width: 1400px) {
+    #colorbox {
+        background-color: yellow;
+    }
+}
+
+/* RULE OVERRIDES FOR MOBILE DEVICES (Explicit range for reference, 370px to 600px) */
+@media screen and (min-width: 370px) and (max-width: 600px) {
+    #colorbox {
+        background-color: red;
+    }
+}
