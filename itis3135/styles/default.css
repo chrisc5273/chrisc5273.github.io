@@ -50,6 +50,9 @@ h1, p {
 }
 
 
+main{
+    min-height: 600px;
+}
 
 main, .maincontainer {
     background: #fff;
