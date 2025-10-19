@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-g">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A single-page website dedicated to the hobby of making beats in FL Studio.">
+    <title>Hobby: Making Beats in FL Studio</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* CSS Variables for easy theme management */
+        :root {
+            --bg-color: #1a1a2e; /* Deep space blue */
+            --primary-text: #e0e0e0; /* Light grey for readability */
+            --accent-color: #00c2cb; /* Vibrant cyan/teal */
+            --header-bg: #162447;
+            --content-bg: #1f4068; 
+            --heading-font: 'Orbitron', sans-serif;
+            --body-font: 'Roboto', sans-serif;
+        }
+
+        /* Basic Reset and Body Styling */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--body-font);
+            background-color: var(--bg-color);
+            color: var(--primary-text);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: var(--header-bg);
+            padding: 1.5rem 1rem;
+            text-align: center;
+            border-bottom: 3px solid var(--accent-color);
+        }
+
+        header h1 {
+            font-family: var(--heading-font);
+            color: var(--accent-color);
+            margin: 0 0 1rem 0;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+        }
+
+        nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.5rem 1rem;
+        }
+        
+        nav li {
+            display: inline-block;
+        }
+
+        nav a {
+            color: var(--primary-text);
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+        }
+        
+        /* Unique Divider */
+        nav li:not(:last-child)::after {
+            content: "◆";
+            color: var(--accent-color);
+            margin-left: 1rem;
+            opacity: 0.5;
+        }
+
+        main {
+            flex: 1; /* Pushes footer down */
+            padding: 2rem 1rem;
+        }
+
+        .page-section {
+            display: none; /* Hide all sections by default */
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: var(--content-bg);
+            border-radius: 8px;
+            border: 1px solid var(--header-bg);
+        }
+
+        .page-section.active {
+            display: block; /* Show only the active section */
+        }
+
+        .page-section h2 {
+            font-family: var(--heading-font);
+            color: var(--accent-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+
+        figure {
+            margin: 1.5rem 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        figure img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 2px solid var(--accent-color);
+        }
+
+        figcaption {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            font-style: italic;
+            color: #b0b0b0;
+        }
+        
+        figure p {
+            font-size: 0.8rem;
+            color: #999;
+            margin-top: 0.25rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--header-bg);
+            color: var(--primary-text);
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: auto; /* Stick to the bottom */
+            border-top: 3px solid var(--accent-color);
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Making Beats in FL Studio</h1>
+        <nav>
+            <ul>
+                <li><a href="#what" class="nav-link active">What</a></li>
+                <li><a href="#who" class="nav-link">Who</a></li>
+                <li><a href="#when" class="nav-link">When</a></li>
+                <li><a href="#where" class="nav-link">Where</a></li>
+                <li><a href="#how" class="nav-link">How</a></li>
+                <li><a href="#why" class="nav-link">Why</a></li>
+                <li><a href="#ai-prompts" class="nav-link">AI Prompts</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="what" class="page-section active">
+            <h2>What is Beat Making?</h2>
+            <p>Beat making is the art of creating musical compositions, primarily for hip-hop, electronic, and pop music, using a Digital Audio Workstation (DAW). It involves arranging drum patterns, crafting melodies, designing basslines, and mixing all the elements together to create a cohesive instrumental track.</p>
+            <figure>
+                <img src="images/fl_studio_interface.jpg" alt="The interface of FL Studio 21, showing the channel rack, piano roll, and playlist view.">
+                <figcaption>The creative canvas: FL Studio's iconic interface.</figcaption>
+                <p><em>AI Prompt: "A clean, vibrant screenshot of a digital audio workstation interface similar to FL Studio, showing a complex hip-hop beat arrangement. The style should be modern and slightly futuristic, with neon accents on the audio waves. Photorealistic."</em></p>
+            </figure>
+            <p>FL Studio, formerly known as FruityLoops, is one of the most popular DAWs in the world. Its pattern-based workflow makes it incredibly intuitive for beginners while still being powerful enough for professional producers like Metro Boomin, Murda Beatz, and Martin Garrix.</p>
+        </section>
+
+        <section id="who" class="page-section">
+            <h2>Who Am I?</h2>
+            <p>I'm a passionate hobbyist producer who fell in love with music creation years ago. What started as a simple curiosity about how my favorite songs were made has blossomed into a fulfilling and endlessly challenging creative outlet. I don't aim for chart-topping hits; I aim for the simple joy of creating something from nothing that sounds good to me.</p>
+            <figure>
+                <img src="images/producer_desk.jpg" alt="A music producer sitting at a desk with a laptop, MIDI keyboard, and studio monitors.">
+                <figcaption>The artist's cockpit, where ideas come to life.</figcaption>
+                <p><em>AI Prompt: "A silhouette of a person from behind, sitting at a music production desk in a dimly lit room. The only light comes from the computer screen and glowing pads on a MIDI controller. The mood is focused and creative. Cinematic, moody lighting."</em></p>
+            </figure>
+            <p>My influences range from the lo-fi beats of J Dilla and Nujabes to the complex electronic soundscapes of Flume. This hobby is my personal escape, a way to translate emotions and ideas into soundwaves and rhythms.</p>
+        </section>
+
+        <section id="when" class="page-section">
+            <h2>When to Create?</h2>
+            <p>The best time to make beats is whenever inspiration strikes, but there's a special kind of magic in the late-night hours. When the world is quiet, the distractions fade away, and it's just you and the sounds. This is often when the most unique and authentic ideas emerge, free from the pressures of the day.</p>
+            <p>A structured schedule can also be beneficial. Dedicating even 30-60 minutes each day helps build a consistent habit, much like exercising a muscle. Consistency often leads to breakthroughs more than waiting for a fleeting moment of pure inspiration.</p>
+            <figure>
+                <img src="images/late_night_studio.jpg" alt="A cozy studio setup at night, with a warm lamp illuminating the equipment.">
+                <figcaption>Inspiration often burns brightest when the sun goes down.</figcaption>
+                <p><em>AI Prompt: "A cozy home music studio at night. A window shows a dark, starry sky. A warm desk lamp illuminates a MIDI keyboard and laptop. The atmosphere is peaceful and serene. Digital art, lo-fi aesthetic."</em></p>
+            </figure>
+        </section>
+
+        <section id="where" class="page-section">
+            <h2>Where to Produce?</h2>
+            <p>One of the greatest things about modern music production is that you can do it almost anywhere. All you truly need is a laptop with a DAW and a decent pair of headphones. This flexibility allows for creation on a bus, in a park, or at a coffee shop.</p>
+            <figure>
+                <img src="images/home_studio_setup.jpg" alt="A minimalist home studio setup in the corner of a well-lit room.">
+                <figcaption>A simple, dedicated space can drastically improve focus and workflow.</figcaption>
+                <p><em>AI Prompt: "A clean and modern minimalist home music studio corner. Natural light from a window. A wooden desk holds a laptop, a small 25-key MIDI keyboard, and a pair of white studio monitors. A plant sits on the corner of the desk. Photorealistic, Scandinavian design."</em></p>
+            </figure>
+            <p>However, having a dedicated home studio space, no matter how small, is ideal. It creates a mental separation between your everyday life and your creative zone. It doesn't need to be a professional, soundproofed room—just a corner of a room with your computer, speakers, and maybe a keyboard can become your personal sonic laboratory.</p>
+        </section>
+
+        <section id="how" class="page-section">
+            <h2>How to Get Started?</h2>
+            <p>Getting started is simpler than you might think. The first step is to acquire a Digital Audio Workstation (DAW). FL Studio offers a free trial version with extensive functionality, which is perfect for beginners. The core workflow typically follows these steps:</p>
+            <ul>
+                <li><strong>Drums:</strong> Start by programming a basic drum pattern in the Channel Rack. A simple kick, snare, and hi-hat pattern is the foundation of most beats.</li>
+                <li><strong>Melody:</strong> Use the Piano Roll to write a melody with a virtual instrument (VST). This could be a piano, a synth, or any sound you like.</li>
+                <li><strong>Arrangement:</strong> Arrange your patterns in the Playlist to build a full song structure (e.g., intro, verse, chorus, outro).</li>
+            </ul>
+            <figure>
+                <img src="images/midi_keyboard.jpg" alt="Close-up shot of hands playing a melody on a MIDI keyboard.">
+                <figcaption>The MIDI keyboard is a direct line from your musical ideas to the DAW.</figcaption>
+                <p><em>AI Prompt: "A dynamic close-up shot of hands playing chords on a small MIDI keyboard. The keys are lit from below with a cool blue light. The background is dark and out of focus. High-detail, photorealistic."</em></p>
+            </figure>
+        </section>
+
+        <section id="why" class="page-section">
+            <h2>Why Make Beats?</h2>
+            <p>For me, making beats is a form of meditation. The process of focusing on sound, rhythm, and melody is incredibly grounding and helps quiet the noise of everyday life. It's a puzzle with infinite solutions, and the challenge of finding the right combination of sounds is deeply rewarding.</p>
+            <figure>
+                <img src="images/creative_spark.jpg" alt="An abstract image of a brain with musical notes and soundwaves emanating from it.">
+                <figcaption>It's about translating the music in your head into something the world can hear.</figcaption>
+                <p><em>AI Prompt: "An abstract, conceptual image representing musical creativity. A glowing, stylized human brain with vibrant soundwaves and musical notes flowing out of it against a dark, cosmic background. Digital art, ethereal style."</em></p>
+            </figure>
+            <p>Beyond the personal satisfaction, it's a skill that combines technology and art. You learn about music theory, sound design, and audio engineering, all while creating something uniquely yours. The feeling of listening back to a finished track that you built from scratch is unparalleled.</p>
+        </section>
+        
+        <section id="ai-prompts" class="page-section">
+            <h2>AI Prompts Used</h2>
+            <p>Artificial intelligence was used to generate all the images on this site to maintain a consistent, modern aesthetic. Below are the prompts used for each image. This practice ensures transparency and showcases how AI can be a powerful tool for creative projects.</p>
+            <figure>
+                <img src="images/ai_prompts_art.jpg" alt="Abstract digital art representing artificial intelligence creating an image.">
+                <figcaption>Using AI as a digital paintbrush.</figcaption>
+                <p><em>AI Prompt: "An abstract image showing a robotic hand holding a glowing paintbrush, painting a digital landscape on a virtual canvas. The style should be futuristic and sleek, with neon lines and circuitry patterns. High-tech concept art."</em></p>
+            </figure>
+            <div>
+                <h3>Image Prompts:</h3>
+                <ul>
+                    <li><strong>What Page:</strong> "A clean, vibrant screenshot of a digital audio workstation interface similar to FL Studio, showing a complex hip-hop beat arrangement. The style should be modern and slightly futuristic, with neon accents on the audio waves. Photorealistic."</li>
+                    <li><strong>Who Page:</strong> "A silhouette of a person from behind, sitting at a music production desk in a dimly lit room. The only light comes from the computer screen and glowing pads on a MIDI controller. The mood is focused and creative. Cinematic, moody lighting."</li>
+                    <li><strong>When Page:</strong> "A cozy home music studio at night. A window shows a dark, starry sky. A warm desk lamp illuminates a MIDI keyboard and laptop. The atmosphere is peaceful and serene. Digital art, lo-fi aesthetic."</li>
+                    <li><strong>Where Page:</strong> "A clean and modern minimalist home music studio corner. Natural light from a window. A wooden desk holds a laptop, a small 25-key MIDI keyboard, and a pair of white studio monitors. A plant sits on the corner of the desk. Photorealistic, Scandinavian design."</li>
+                    <li><strong>How Page:</strong> "A dynamic close-up shot of hands playing chords on a small MIDI keyboard. The keys are lit from below with a cool blue light. The background is dark and out of focus. High-detail, photorealistic."</li>
+                    <li><strong>Why Page:</strong> "An abstract, conceptual image representing musical creativity. A glowing, stylized human brain with vibrant soundwaves and musical notes flowing out of it against a dark, cosmic background. Digital art, ethereal style."</li>
+                    <li><strong>AI Prompts Page:</strong> "An abstract image showing a robotic hand holding a glowing paintbrush, painting a digital landscape on a virtual canvas. The style should be futuristic and sleek, with neon lines and circuitry patterns. High-tech concept art."</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            <a href="http://validator.w3.org/check?uri=referer" target="_blank"><img src="https://www.w3.org/Icons/valid-html401" alt="Valid HTML!"></a>
+            <a href="http://jigsaw.w3.org/css-validator/check/referer" target="_blank"><img src="http://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!"></a>
+            <a href="https://wave.webaim.org/report#/" target="_blank">Validate Accessibility (Manual Check Required)</a>
+        </p>
+        <p>&copy; 2025 by Your Name | Designed by <a href="#">Gemini Designs</a></p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('.page-section');
+
+            // Set the 'What' section and its link to active by default
+            const defaultSection = document.getElementById('what');
+            const defaultLink = document.querySelector('a[href="#what"]');
+            if (defaultSection) {
+                defaultSection.classList.add('active');
+            }
+             if (defaultLink) {
+                defaultLink.classList.add('active');
+            }
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault(); // Stop the browser from jumping to the anchor
+
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+
+                    sections.forEach(section => {
+                        section.classList.remove('active');
+                    });
+                    navLinks.forEach(navLink => {
+                        navLink.classList.remove('active');
+                    });
+
+                    if (targetSection) {
+                        targetSection.classList.add('active');
+                    }
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

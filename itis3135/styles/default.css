@@ -49,18 +49,12 @@ h1, p {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-/*
-|--------------------------------------------------------------------------
-| FOUNDATIONAL THREE - RESPONSIVE LAYOUT (Applied globally/default)
-|--------------------------------------------------------------------------
-| These styles center the main content and define its boundaries.
-*/
+
 
 main, .maincontainer {
     background: #fff;
     text-align: center;
     
-    /* ASSIGNMENT REQUIREMENTS: */
     width: 95%;          /* Percentage Width */
     max-width: 1200px;   /* Max-Width to prevent stretching */
     margin: 0 auto;      /* Margins to 0 auto to center content */
