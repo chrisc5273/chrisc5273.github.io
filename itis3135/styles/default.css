@@ -44,7 +44,16 @@ header {
     color: #fff;
     padding: 5px;
 }
+nav a:link,
+nav a:visited {
+    color: white;
+}
 
+/* Optional: Define a specific hover color for nav links */
+nav a:hover {
+    color: #cccccc; /* A light grey for hover, for example */
+    text-decoration: underline;
+}
 h1, p {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
