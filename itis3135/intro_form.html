@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ITIS 3135 | Chris Carchi's | Couragous Crocodile | Introduction Form</title>
     <link rel="stylesheet" href="styles/default.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
     <style>
         /* Styles for the form layout */
         form {
@@ -66,9 +70,22 @@
         button[type="submit"] { background-color: #4CAF50; color: white; }
         button[type="reset"] { background-color: #f44336; color: white; }
         button[type="button"] { background-color: #555; color: white; }
+        #jsonBtn { background-color: #2196F3; color: white; }
+        
+        /* Added style for the new HTML button */
+        #htmlBtn { background-color: #ff9800; color: white; } 
+
         #resetViewBtn { background-color: #008CBA; color: white; margin: 20px auto; display: none; }
         #formOutput { text-align: left; margin: 20px; }
         #formOutput img { max-width: 300px; height: auto; }
+        
+        #formOutput pre {
+            background: #f4f4f4;
+            padding: 1em;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            white-space: pre-wrap; 
+        }
     </style>
 </head>
 
@@ -121,20 +138,16 @@
                 <legend>Background & Statements</legend>
                 
                 <label for="personalBg">Personal Background:</label>
-                <textarea id="personalBg" name="personalBg" placeholder="Tell us about your personal background."><?php echo "I am from Elon, NC and I always had an interest in how computers work and the need
-                to explore different places, which is why I transferred to UNCC."; ?></textarea>
+                <textarea id="personalBg" name="personalBg" placeholder="Tell us about your personal background.">I am from Elon, NC and I always had an interest in how computers work and the need to explore different places, which is why I transferred to UNCC.</textarea>
                 
                 <label for="profBg">Professional Background:</label>
-                <textarea id="profBg" name="profBg" placeholder="Tell us about your professional background."><?php echo "I earned an honors certificate in software development at my job at Amazon and
-                have an associate degree from a community college. Currently, I am an engineering intern at Boyle
-                Industries."; ?></textarea>
+                <textarea id="profBg" name="profBg" placeholder="Tell us about your professional background.">I earned an honors certificate in software development at my job at Amazon and have an associate degree from a community college. Currently, I am an engineering intern at Boyle Industries.</textarea>
                 
                 <label for="acadBg">Academic Background:</label>
-                <textarea id="acadBg" name="acadBg" placeholder="Tell us about your academic background."><?php echo "I am a third year at UNCC studying computer science with a concentration in cyber
-                security."; ?></textarea>
+                <textarea id="acadBg" name="acadBg" placeholder="Tell us about your academic background.">I am a third year at UNCC studying computer science with a concentration in cyber security.</textarea>
                 
                 <label for="compBg">Primary Computer:</label>
-                <textarea id="compBg" name="compBg" placeholder="Describe your primary computer setup."><?php echo "I am using a dell linux laptop and I primarily use it at home for my schoolwork."; ?></textarea>
+                <textarea id="compBg" name="compBg" placeholder="Describe your primary computer setup.">I am using a dell linux laptop and I primarily use it at home for my schoolwork.</textarea>
 
                 <label for="ackStatement">Acknowledgment Statement:</label>
                 <textarea id="ackStatement" name="ackStatement" placeholder="I acknowledge that..."></textarea>
@@ -154,7 +167,7 @@
                         <input type="text" name="courseDept[]" value="ITIS" placeholder="Department (e.g., ITIS)">
                         <input type="text" name="courseNum[]" value="3135" placeholder="Number (e.g., 3135)">
                         <input type="text" name="courseName[]" value="Front-end Web App Development" placeholder="Course Name">
-                        <textarea name="courseReason[]" placeholder="Reason for taking"><?php echo "It is a prerequisite for a cybersecurity class"; ?></textarea>
+                        <textarea name="courseReason[]" placeholder="Reason for taking">It is a prerequisite for a cybersecurity class</textarea>
                         <button type="button" class="delete-course">Delete</button>
                     </div>
                     <div class="course-entry">
@@ -162,8 +175,7 @@
                         <input type="text" name="courseDept[]" value="ITIS" placeholder="Department">
                         <input type="text" name="courseNum[]" value="3200" placeholder="Number">
                         <input type="text" name="courseName[]" value="Intro to Info Security & Privacy" placeholder="Course Name">
-                        <textarea name="courseReason[]" placeholder="Reason for taking"><?php echo "It is required for my degree and I want to learn more
-                about how privacy can be affected and how to be more secure"; ?></textarea>
+                        <textarea name="courseReason[]" placeholder="Reason for taking">It is required for my degree and I want to learn more about how privacy can be affected and how to be more secure</textarea>
                         <button type="button" class="delete-course">Delete</button>
                     </div>
                     <div class="course-entry">
@@ -171,8 +183,7 @@
                         <input type="text" name="courseDept[]" value="ITIS" placeholder="Department">
                         <input type="text" name="courseNum[]" value="3146" placeholder="Number">
                         <input type="text" name="courseName[]" value="Intro to Operating System and Networking" placeholder="Course Name">
-                        <textarea name="courseReason[]" placeholder="Reason for taking"><?php echo "Required and I am interested in computers and how
-                they function"; ?></textarea>
+                        <textarea name="courseReason[]" placeholder="Reason for taking">Required and I am interested in computers and how they function</textarea>
                         <button type="button" class="delete-course">Delete</button>
                     </div>
                     <div class="course-entry">
@@ -180,8 +191,7 @@
                         <input type="text" name="courseDept[]" value="ITIS" placeholder="Department">
                         <input type="text" name="courseNum[]" value="3155" placeholder="Number">
                         <input type="text" name="courseName[]" value="Software Engineering" placeholder="Course Name">
-                        <textarea name="courseReason[]" placeholder="Reason for taking"><?php echo "Required and I wanted to be a software engineer at one point but now
-                changed to cybersecurity"; ?></textarea>
+                        <textarea name="courseReason[]" placeholder="Reason for taking">Required and I wanted to be a software engineer at one point but now changed to cybersecurity</textarea>
                         <button type="button" class="delete-course">Delete</button>
                     </div>
                     <div class="course-entry">
@@ -189,8 +199,7 @@
                         <input type="text" name="courseDept[]" value="ITIS" placeholder="Department">
                         <input type="text" name="courseNum[]" value="3166" placeholder="Number">
                         <input type="text" name="courseName[]" value="Intro to Computer Networks" placeholder="Course Name">
-                        <textarea name="courseReason[]" placeholder="Reason for taking"><?php echo "Required but I want to know how the network functions and how it
-                connects to devices"; ?></textarea>
+                        <textarea name="courseReason[]" placeholder="Reason for taking">Required but I want to know how the network functions and how it connects to devices</textarea>
                         <button type="button" class="delete-course">Delete</button>
                     </div>
                 </div>
@@ -230,6 +239,8 @@
                 <button type="submit">Submit</button>
                 <button type="reset">Reset</button>
                 <button type="button" id="clearBtn">Clear</button>
+                <button type="button" id="jsonBtn">Generate JSON</button>
+                <button type="button" id="htmlBtn">Generate HTML</button>
             </div>
         </form>
     </main>
@@ -240,6 +251,7 @@
     
     <script src="scripts/HTMLInclude.min.js"></script>
     <script src="scripts/introduction.js"></script>
-
+    <script src="scripts/generate_json.js"></script>
+    <script src="scripts/generate_html.js"></script>
 </body>
 </html>
