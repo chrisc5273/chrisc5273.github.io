@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITIS 3135 | Chris Carchi's | Couragous Crocodile | Project Plan</title>
+    <link rel="stylesheet" href="styles/default.css">
+</head>
+
+<body>
+    <header>
+   <div data-include="components/header.html"></div>
+</header>
+    
+    <main>
+        <h2>Project: Cybersecurity Study Hub</h2>
+        <p>This page outlines the plan for my ITIS 3135 project, following the assignment requirements.</p>
+
+        <hr>
+
+        <h3>Client and Project Category</h3>
+        <ul>
+            <li><strong>Client Category:</strong> 01 - Peer Classmate. My client will be a small group of fellow students in my ITIS 3200 class.</li>
+            <li><strong>Project Category:</strong> 3 - Student group at UNCC that encourages participation. The goal is to build a web application that provides a service for us (students) to learn a subject (cybersecurity).</li>
+        </ul>
+
+        <hr>
+
+        <h3>1. Project Overview</h3>
+       
+        <ul>
+            <li><strong>Application and Purpose:</strong> The application is a "Cybersecurity Study Hub" for the ITIS 3200 (Intro to Info Security & Privacy) course. Its purpose is to consolidate and organize study materials, key concepts, and external resources into a single, easy-to-navigate website. It provides a "read-only" service to help students learn the subject, as our course does not cover data interaction involving CRUD.</li>
+            <li><strong>Intended Users:</strong> The primary users are students currently enrolled in ITIS 3200, as well as the course TA who can provide content.</li>
+            <li><strong>Overview of Content:</strong> The site will feature curated study guides (organized by module), a filterable glossary of key terms (like 'CIA Triad', 'SOP', 'SIEM', etc.), a visual gallery of important diagrams (OSI model, network topologies), and a page of external resources (practice sites, tools).</li>
+        </ul>
+
+        <hr>
+
+        <h3>2. Client Information</h3>
+       
+        <p>As this information is for a class project and will be public, I am keeping my client's personal data private as recommended.</p>
+        <ul>
+            <li><strong>Name of the client:</strong> [private]</li>
+            <li><strong>Organization/Institute:</strong> UNCC / ITIS 3200 Study Group</li>
+            <li><strong>Client's valid email address:</strong> [private]</li>
+            <li><strong>Client's phone number:</strong> [private]</li>
+        </ul>
+
+        <hr>
+
+        <h3>3. Wireframe</h3>
+       
+        <p>A wireframe for the default page design was created using draw.io and is embedded below.</p>
+        <figure>
+            <img src="./images/wireframe.drawio.png" alt="Wireframe of the project homepage">
+            <figcaption>Wireframe of the Study Hub's default page layout, showing header, footer, and main content areas.</figcaption>
+        </figure>
+
+        <hr>
+
+        <h3>4. Site Map</h3>
+       
+        <p>The website will have 6 pages to ensure a clear separation of content. All pages will share a component header and footer. The site map is embedded below.</p>
+        
+        <figure>
+            <img src="images/siteMap.drawio.png" alt="Sitemap for the project">
+            <figcaption>Site map showing the 6-page structure and navigation flow of the application.</figcaption>
+        </figure>
+        
+        <p>The 6 pages will be:</p>
+        <ol>
+            <li>`index.html` (Home)</li>
+            <li>`guides.html` (Study Guides)</li>
+            <li>`glossary.html` (Key Terms)</li>
+            <li>`diagrams.html` (Diagram Gallery)</li>
+            <li>`resources.html` (External Links)</li>
+            <li>`contact.html` (Contact/About)</li>
+        </ol>
+
+        <hr>
+
+        <h3>5. Page Design</h3>
+       
+        <p>Below is the detailed design for each page listed in the site map.</p>
+
+        <h4>Page 1: `index.html` (Home)</h4>
+        <ul>
+            <li><strong>Name:</strong> Home</li>
+            <li><strong>Purpose:</strong> To introduce the Study Hub, state its purpose, and provide quick navigation to the main content areas.</li>
+            <li><strong>Audience:</strong> First-time and returning students.</li>
+            <li><strong>Content:</strong> Welcome text, a brief "About" paragraph, and three "Quick Link" cards (e.g., "View Guides", "Search Terms", "See Diagrams").</li>
+            <li><strong>Data Entry:</strong> No.</li>
+            <li><strong>Validations:</strong> N/A.</li>
+            <li><strong>Buttons/Links:</strong> Main navigation, footer links, and the three Quick Link cards.</li>
+            <li><strong>Actions:</strong> All links navigate to their respective pages.</li>
+        </ul>
+
+        <h4>Page 2: `guides.html` (Study Guides)</h4>
+        <ul>
+            <li><strong>Name:</strong> Study Guides</li>
+            <li><strong>Purpose:</strong> To provide detailed, topic-by-topic study guides in an organized, collapsible format.</li>
+            <li><strong>Audience:</strong> Students preparing for exams or reviewing modules.</li>
+            <li><strong>Content:</strong> A **jQuery-UI Accordion** widget. Each accordion header will be a module title (e.g., "Module 1: CIA Triad"). The content will be the study notes for that module.</li>
+            <li><strong>Data Entry:</strong> No.</li>
+            <li><strong>Validations:</strong> N/A.</li>
+            <li><strong>Buttons/Links:</strong> The accordion headers themselves are the links/buttons.</li>
+            <li><strong>Actions:</strong> Clicking a header will use JavaScript (from the jQuery-UI widget) to toggle the display of the content panel.</li>
+        </ul>
+
+        <h4>Page 3: `glossary.html` (Key Terms)</h4>
+        <ul>
+            <li><strong>Name:</strong> Key Terms</li>
+            <li><strong>Purpose:</strong> To provide a client-side, filterable A-Z list of all key terms and acronyms for the course.</li>
+            <li><strong>Audience:</strong> Students who need to quickly look up a term.</li>
+            <li><strong>Content:</strong> A search/filter input field and a definition list (`<dl>`) of all terms and definitions.</li>
+            <li><strong>Data Entry:</strong> Yes, a filter input field (this is a read-only operation).</li>
+            <li><strong>Validations:</strong> N/A.</li>
+            <li><strong>Buttons/Links:</strong> No buttons.</li>
+            <li><strong>Actions:</strong> As the user types in the filter box, JavaScript will run `onkeyup` to hide/show terms in the definition list that match the input.</li>
+        </ul>
+
+        <h4>Page 4: `diagrams.html` (Diagram Gallery)</h4>
+        <ul>
+            <li><strong>Name:</strong> Diagram Gallery</li>
+            <li><strong>Purpose:</strong> To provide a visual gallery of key security/networking diagrams (e.g., OSI Model, 3-way handshake).</li>
+            <li><strong>Audience:</strong> Visual learners.</li>
+            <li><strong>Content:</strong> A grid of thumbnail images. This will be implemented as an **interactive image gallery** (e.g., a lightbox).</li>
+            <li><strong>Data Entry:</strong> No.</li>
+            <li><strong>Validations:</strong> N/A.</li>
+            <li><strong>Buttons/Links:</strong> The thumbnail images.</li>
+            <li><strong>Actions:</strong> Clicking a thumbnail will use JavaScript to open a full-size modal/lightbox view of the image with a caption.</li>
+        </ul>
+
+        <h4>Page 5: `resources.html` (External Links)</h4>
+        <ul>
+            <li><strong>Name:</strong> External Links</li>
+            <li><strong>Purpose:</strong> To host a curated list of external resources (tools, practice sites, articles), loaded dynamically.</li>
+            <li><strong>Audience:</strong> Students looking for more information or practice (e.g., Wireshark or subnetting practice).</li>
+            <li><strong>Content:</strong> A container that will be populated with links. This page will use **AJAX**. The link data will be stored in a static `links.json` file.</li>
+            <li><strong>Data Entry:</strong> No.</li>
+            <li><strong>Validations:</strong> N/A.</li>
+            <li><strong>Buttons/Links:</strong> Potentially category filter buttons (e.g., "Tools", "Practice", "Articles").</li>
+            <li><strong>Actions:</strong> On page load, **AJAX** will fetch the `links.json` file and use JavaScript to parse it and render the links as HTML.</li>
+        </ul>
+        
+        <h4>Page 6: `contact.html` (Contact/About)</h4>
+        <ul>
+            <li><strong>Name:</strong> Contact/About</li>
+            <li><strong>Purpose:</strong> To provide information about the client/study group and a simple contact form.</li>
+            <li><strong>Audience:</strong> Students who want to contribute content or get in touch.</li>
+            <li><strong>Content:</strong> "About the Group" text and a simple HTML form (Name, Email, Message).</li>
+            <li><strong>Data Entry:</strong> Yes, the form fields.</li>
+            <li><strong>Validations:</strong> Yes. JavaScript will be used to validate that the email is in a correct format and the message is not empty before "submitting."</li>
+            <li><strong>Buttons/Links:</strong> Form "Submit" button.</li>
+            <li><strong>Actions:</strong> Clicking "Submit" will trigger JS validation. If valid, the script will hide the form and display a "Thank you" message. **No data will be stored** (respecting the no-CRUD rule).</li>
+        </ul>
+
+        <hr>
+
+        <h3>6. Dynamic Functionality on the Website</h3>
+       
+        <p>This website will implement several key pieces of JavaScript-driven dynamic functionality:</p>
+        <ol>
+            <li>
+                <strong>jQuery-UI Accordion (`guides.html`):</strong>
+                <ul>
+                    <li><strong>Why:</strong> To present a large amount of study guide text in a compact, organized way.</li>
+                    <li><strong>Example URL:</strong> `https://jqueryui.com/accordion/`</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Live Search/Filter (`glossary.html`):</strong>
+                <ul>
+                    <li><strong>Why:</strong> To allow users to instantly find a specific term in a long list without page reloads.</li>
+                    <li><strong>Example URL:</strong> `https://www.w3schools.com/howto/howto_js_filter_list.asp`</li>
+                </ul>
+            </li>
+            <li>
+                <strong>AJAX Content Loading (`resources.html`):</strong>
+                <ul>
+                    <li><strong>Why:</strong> To meet the project's AJAX requirement and to practice separating data (`.json`) from presentation (`.html`).</li>
+                    <li><strong>Example URL:</strong> `https://www.w3schools.com/js/js_ajax_intro.asp`</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Image Gallery/Lightbox (`diagrams.html`):</strong>
+                <ul>
+                    <li><strong>Why:</strong> To provide a clean, interactive way to view important diagrams in detail.</li>
+                    <li><strong>Example URL:</strong> `https://lokeshdhakar.com/projects/lightbox2/` (This is just an example of the *type* of interactivity).</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Form Validation (`contact.html`):</strong>
+                <ul>
+                    <li><strong>Why:</strong> To practice client-side validation and provide user feedback without a backend.</li>
+                    <li><strong>Example URL:</strong> `https://www.w3schools.com/js/js_form_validation.asp`</li>
+                </ul>
+            </li>
+        </ol>
+        
+    </main>
+
+    <footer>
+        <div data-include="../components/footer.html"></div>
+    </footer>
+    <script src="scripts/HTMLInclude.min.js"></script>
+
+</body>
+</html>

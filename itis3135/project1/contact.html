@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITIS 3200 Study Hub | Contact</title>
+    <link rel="stylesheet" href="../styles/default.css">
+    <link rel="stylesheet" href="styles/project.css">
+</head>
+<body>
+    <header>
+        <div data-include="components/header.html"></div>
+    </header>
+    
+    <main>
+        <h2>About & Contact</h2>
+        
+        <h3>About This Group</h3>
+        <p>We are a student-led study group for ITIS 3200. Our goal is to provide a clear, simple, and useful set of resources for our classmates. This site was built as a class project to practice front-end development skills.</p>
+        
+        <h3>Contact Us</h3>
+        <p>Want to contribute a study guide or suggest a resource? Fill out the form below. (Note: This is a demo form for a class project and does not send data to a server).</p>
+
+        <div id="form-success-msg" style="display:none;">
+            <p><strong>Thank you! Your message has been "sent."</strong></p>
+        </div>
+
+        <form id="contactForm">
+            <div>
+                <label for="contactName">Name:</label>
+                <input type="text" id="contactName" name="name" required>
+            </div>
+            <div>
+                <label for="contactEmail">Email:</label>
+                <input type="email" id="contactEmail" name="email" required>
+                <span id="email-error" class="error-msg"></span>
+            </div>
+            <div>
+                <label for="contactMsg">Message:</label>
+                <textarea id="contactMsg" name="message" rows="5" required></textarea>
+                <span id="msg-error" class="error-msg"></span>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+
+    <footer>
+        <div data-include="components/footer.html"></div>
+    </footer>
+    <script src="../scripts/HTMLInclude.min.js"></script>
+    <script src="scripts/project.js"></script>
+</body>
+</html>

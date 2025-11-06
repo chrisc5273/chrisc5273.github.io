@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITIS 3200 Study Hub | Diagram Gallery</title>
+    <!-- This path is correct: Up to root, then down to styles -->
+    <link rel="stylesheet" href="/styles/default.css">
+</head>
+<body>
+
+
+    <header>
+        <!-- This path is relative to the root, which HTMLInclude handles -->
+        <div data-include="components/header.html"></div>
+    </header>
+    
+    <main>
+        <h2>Diagram Gallery</h2>
+
+        <div class="gallery-grid">
+            <!-- UPDATED to use your local image paths -->
+            <img class="gallery-img" src="images/osi.png" 
+                 alt="The 7 Layers of the OSI Model" 
+                 data-caption="The 7 Layers of the OSI Model: A conceptual framework for how networking systems communicate.">
+                 
+            <img class="gallery-img" src="images/tcp.png" 
+                 alt="TCP 3-Way Handshake (SYN, SYN-ACK, ACK)"
+                 data-caption="The TCP 3-Way Handshake (SYN, SYN-ACK, ACK) is the process used to establish a reliable connection.">
+                 
+            <img class="gallery-img" src="images/firewall.png" 
+                 alt="A simple network firewall topology"
+                 data-caption="A simple network diagram showing how a firewall sits between the internal network (LAN) and the external network (Internet).">
+
+            <img class="gallery-img" src="images/encrypt.png" 
+                 alt="Symmetric vs. Asymmetric Encryption"
+                 data-caption="Symmetric encryption uses a single shared key. Asymmetric (public-key) encryption uses a pair of keys: one public, one private.">
+        </div>
+    </main>
+
+    <footer>
+        <!-- This path is also relative to the root -->
+        <div data-include="components/footer.html"></div>
+    </footer>
+    
+    <!-- This path is correct: Up to root, then down to scripts -->
+    <script src="../scripts/HTMLInclude.min.js"></script>
+    <!-- This path is correct: Relative to diagrams.html -->
+    <script src="scripts/project.js"></script>
+</body>
+</html>

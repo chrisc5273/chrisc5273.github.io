@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITIS 3200 Study Hub | Study Guides</title>
+    <link rel="stylesheet" href="styles/default.css">
+    <link rel="stylesheet" href="styles/project.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+</head>
+<body>
+    <header>
+        <div data-include="components/header.html"></div>
+    </header>
+    
+    <main>
+        <h2>Study Guides by Module</h2>
+        <p>Click on a module to expand its notes. This is implemented using the jQuery-UI Accordion widget.</p>
+
+        <div id="accordion">
+            <h3>Module 1: The CIA Triad</h3>
+            <div>
+                <p>The foundation of information security.</p>
+                <ul>
+                    <li><strong>Confidentiality:</strong> Preventing unauthorized disclosure of information.</li>
+                    <li><strong>Integrity:</strong> Ensuring information is not altered or destroyed in an unauthorized manner.</li>
+                    <li><strong>Availability:</strong> Ensuring information and systems are accessible when needed.</li>
+                </ul>
+            </div>
+            <h3>Module 2: Access Control</h3>
+            <div>
+                <p>Mechanisms for controlling who can access what.</p>
+                <ul>
+                    <li><strong>Authentication:</strong> Verifying a user's identity (e.g., password, 2FA).</li>
+                    <li><strong>Authorization:</strong> Granting specific permissions to an authenticated user.</li>
+                    <li><strong>Accountability:</strong> Tracking user actions.</li>
+                </ul>
+            </div>
+            <h3>Module 3: Networking Basics (OSI Model)</h3>
+            <div>
+                <p>A conceptual framework for how networking systems communicate.</p>
+                <ol>
+                    <li>Physical</li>
+                    <li>Data Link (e.g., MAC Addresses)</li>
+                    <li>Network (e.g., IP Addresses, Routers)</li>
+                    <li>Transport (e.g., TCP/UDP, Ports)</li>
+                    <li>Session</li>
+                    <li>Presentation</li>
+                    <li>Application (e.g., HTTP, FTP)</li>
+                </ol>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div data-include="components/footer.html"></div>
+    </footer>
+    <script src="../scripts/HTMLInclude.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <script>
+    // Initialize the accordion
+    $( function() {
+        $( "#accordion" ).accordion({
+            heightStyle: "content" // Makes panels size to their content
+        });
+    } );
+    </script>
+</body>
+</html>

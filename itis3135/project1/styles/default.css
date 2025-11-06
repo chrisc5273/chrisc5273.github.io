@@ -1,0 +1,365 @@
+/*
+|--------------------------------------------------------------------------
+| BASE STYLES & LINK DEFINITIONS (Applied globally)
+|--------------------------------------------------------------------------
+*/
+
+/* Default styles for all anchor links */
+a {
+    text-decoration: none;
+    padding: 25px;
+    color: rgb(253, 253, 28); /* Yellow color */
+}
+
+/* Link State Colors (LVHA Order: Link, Visited, Hover, Active) */
+a:link {
+    color: #0f172a; /* Dark gray/blue - "not blue" */
+    text-decoration: none;
+}
+
+a:visited {
+    color: #334155; /* Medium gray/blue - "not purple" */
+}
+
+a:hover {
+    color: #0369a1; /* Clear hover blue */
+    text-decoration: underline;
+}
+
+a:active {
+    color: #b91c1c; /* Darker red - "not bright red" */
+}
+
+/* Base Body and Typography Styles */
+body {
+    background-color: #fdfdfd; /* Background from sample */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: rgb(0, 0, 0); /* Default text color from original code */
+}
+
+header {
+    background-color: #000;
+    color: #fff;
+    padding: 5px;
+}
+nav a:link,
+nav a:visited {
+    color: white;
+}
+
+/* Optional: Define a specific hover color for nav links */
+nav a:hover {
+    color: #cccccc; /* A light grey for hover, for example */
+    text-decoration: underline;
+}
+h1, p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+main{
+    min-height: 600px;
+}
+
+/* Updated this rule for better content alignment */
+main, .maincontainer {
+    background: #fff;
+    /* Changed to left-align for better readability */
+    text-align: left; 
+    padding: 20px; /* Added padding */
+    
+    width: 95%;          /* Percentage Width */
+    max-width: 1200px;   /* Max-Width to prevent stretching */
+    margin: 0 auto;      /* Margins to 0 auto to center content */
+}
+
+/* Added this rule to keep main titles centered */
+main h2, main h3 {
+    text-align: center;
+}
+
+/* |--------------------------------------------------------------------------
+| FOOTER STYLES (NEWLY ADDED)
+|--------------------------------------------------------------------------
+*/
+footer {
+    background-color: #000; /* Match header */
+    color: #ccc; /* Lighter text color for footer */
+    padding: 20px;
+    margin-top: 30px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 0.9em;
+}
+footer p {
+    margin: 5px 0;
+    font-family: Arial, sans-serif;
+}
+footer a {
+    color: #fff; /* Make footer links white */
+    text-decoration: underline;
+    padding: 5px; /* Smaller padding for footer links */
+}
+footer a:hover {
+    color: #0369a1; /* Match main link hover */
+}
+
+
+/* Example colorbox element used for media query demonstration */
+#colorbox {
+    height: 200px;
+    width: 200px;
+    background: blue; /* Default/Mobile background color */
+    margin: 50px auto;
+}
+
+
+
+/* RULE OVERRIDES FOR TABLET DEVICES (601px to 980px) */
+@media screen and (min-width: 601px) and (max-width: 980px) {
+    #colorbox {
+        background-color: orange;
+    }
+}
+
+@media screen and (min-width: 981px) and (max-width: 1400px) {
+    #colorbox {
+        background-color: yellow;
+    }
+}
+
+/* RULE OVERRIDES FOR MOBILE DEVICES (Explicit range for reference, 370px to 600px) */
+@media screen and (min-width: 370px) and (max-width: 600px) {
+    #colorbox {
+        background-color: red;
+    }
+}
+
+
+/* |--------------------------------------------------------------------------
+| PROJECT: CYBERSECURITY STUDY HUB STYLES
+|--------------------------------------------------------------------------
+*/
+
+/* --- project/index.html (Homepage Cards) --- */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* Center the cards */
+    margin-top: 30px;
+}
+.card-link {
+    display: block;
+    width: 280px;
+    padding: 25px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #333;
+    background-color: #f9f9f9;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.card-link:hover {
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+    border-color: #0369a1; /* Match link hover color */
+}
+.card-link h4 {
+    margin-top: 0;
+    color: #0369a1;
+    font-size: 1.3em;
+    text-align: center;
+}
+.card-link p {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+/* --- project/guides.html (jQuery Accordion) --- */
+/* Overrides to make the accordion look cleaner */
+#accordion .ui-accordion-header {
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    color: #333;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.2em;
+}
+#accordion .ui-accordion-header.ui-state-active {
+    background: #0369a1;
+    color: white;
+    border-color: #0369a1;
+}
+#accordion .ui-accordion-content {
+    border: 1px solid #ddd;
+    border-top: none;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* --- project/glossary.html (Filterable List) --- */
+#glossarySearch {
+    display: block;
+    width: 95%;
+    max-width: 600px;
+    padding: 12px;
+    font-size: 1.1em;
+    margin: 10px auto 30px auto; /* Center the search bar */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+#glossaryList dt {
+    font-weight: bold;
+    font-size: 1.3em;
+    margin-top: 20px;
+    color: #0369a1;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#glossaryList dd {
+    margin-left: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* --- project/diagrams.html (Gallery & Lightbox) --- */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+.gallery-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Ensures images are same size */
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.gallery-img:hover {
+    opacity: 0.8;
+    border-color: #0369a1;
+}
+
+/* Lightbox styles */
+#lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 1000;
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+#lightbox-img {
+    max-width: 90%;
+    max-height: 80%;
+    border: 3px solid white;
+    border-radius: 4px;
+}
+#lightbox-caption {
+    color: white;
+    margin-top: 15px;
+    font-size: 1.2em;
+    font-family: Arial, sans-serif;
+}
+#close-lightbox {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* --- project/resources.html (AJAX List) --- */
+#resources-container p {
+    font-family: Arial, sans-serif;
+}
+.resource-item {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 10px;
+    background: #fdfdfd;
+}
+.resource-item h4 {
+    margin-top: 0;
+    text-align: left;
+}
+.resource-item a {
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+.resource-item p {
+    font-family: Arial, sans-serif;
+    margin-bottom: 0;
+}
+
+/* --- project/contact.html (Form) --- */
+#contactForm div {
+    margin-bottom: 15px;
+}
+#contactForm label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#contactForm input[type="text"],
+#contactForm input[type="email"],
+#contactForm textarea {
+    width: 95%;
+    max-width: 600px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    font-family: Arial, sans-serif;
+}
+#contactForm button {
+    padding: 12px 25px;
+    background-color: #0369a1;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transition: background-color 0.2s;
+}
+#contactForm button:hover {
+    background-color: #0f172a;
+}
+.error-msg {
+    color: #b91c1c; /* Match link active color */
+    font-size: 0.9em;
+    margin-top: 5px;
+    font-family: Arial, sans-serif;
+}
+#form-success-msg {
+    background: #dff0d8;
+    color: #3c763d;
+    border: 1px solid #d6e9c6;
+    padding: 15px;
+    border-radius: 4px;
+    max-width: 600px;
+}
+#form-success-msg p {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}

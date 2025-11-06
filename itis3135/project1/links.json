@@ -1,0 +1,22 @@
+[
+    {
+        "title": "Wireshark",
+        "url": "https://www.wireshark.org/",
+        "desc": "The world's foremost network protocol analyzer. Essential for packet sniffing and network analysis."
+    },
+    {
+        "title": "Subnetting Practice",
+        "url": "https://www.subnetting.net/",
+        "desc": "An excellent free resource for practicing IP subnetting questions."
+    },
+    {
+        "title": "TryHackMe",
+        "url": "https://tryhackme.com/",
+        "desc": "A hands-on, gamified platform for learning cybersecurity concepts."
+    },
+    {
+        "title": "OWASP Top 10",
+        "url": "https://owasp.org/www-project-top-ten/",
+        "desc": "The Open Web Application Security Project's list of the 10 most critical web application security risks."
+    }
+]
