@@ -1,0 +1,94 @@
+
+     a {
+            text-decoration: none;
+            padding: 25px;
+            color: rgb(0, 0, 0); /* Yellow color */
+        }
+
+        /* Link State Colors (LVHA Order: Link, Visited, Hover, Active) */
+        a:link {
+            color: #0f172a; /* Dark gray/blue - "not blue" */
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: #ffffff; /* Medium gray/blue - "not purple" */
+        }
+
+        a:hover {
+            color: #0369a1; /* Clear hover blue */
+            text-decoration: underline;
+        }
+
+        a:active {
+            color: #b91c1c; /* Darker red - "not bright red" */
+        }
+
+        /* Base Body and Typography Styles */
+        body {
+            background-color: #fdfdfd; /* Background from sample */
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            color: rgb(0, 0, 0); /* Default text color from original code */
+        }
+
+        header {
+            background-color: #000;
+            color: #ffffff;
+            padding: 5px;
+        }
+
+
+        /* Optional: Define a specific hover color for nav links */
+        nav a:hover {
+            color: #cccccc; /* A light grey for hover, for example */
+            text-decoration: underline;
+        }
+        
+        h1, h2, h3, p {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        main{
+            min-height: 600px;
+        }
+
+        main, .maincontainer {
+            background: #fff;
+            text-align: center;
+            
+            width: 95%;          /* Percentage Width */
+            max-width: 1200px;   /* Max-Width to prevent stretching */
+            margin: 0 auto;      /* Margins to 0 auto to center content */
+        }
+
+        /* Example colorbox element used for media query demonstration */
+        #colorbox {
+            height: 200px;
+            width: 200px;
+            background: blue; /* Default/Mobile background color */
+            margin: 50px auto;
+        }
+
+
+
+        /* RULE OVERRIDES FOR TABLET DEVICES (601px to 980px) */
+        @media screen and (min-width: 601px) and (max-width: 980px) {
+            #colorbox {
+                background-color: orange;
+            }
+        }
+
+        @media screen and (min-width: 981px) and (max-width: 1400px) {
+            #colorbox {
+                background-color: yellow;
+            }
+        }
+
+        /* RULE OVERRIDES FOR MOBILE DEVICES (Explicit range for reference, 370px to 600px) */
+        @media screen and (min-width: 370px) and (max-width: 600px) {
+            #colorbox {
+                background-color: red;
+            }
+        }
